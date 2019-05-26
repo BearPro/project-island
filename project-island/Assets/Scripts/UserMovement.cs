@@ -22,11 +22,6 @@ namespace ProjectPrototype
             {
                 rigidbody.MovePosition(transform.position + dPosition);
             }
-            else
-            {
-
-            }
-            
         }
     }
 }
