@@ -22,6 +22,8 @@ namespace ProjectPrototype {
         private float mass = 0;
         [SerializeField]
         private GameObject instantiateOnDestroy;
+        [SerializeField]
+        private int damage = 10;
         void Start()
         {
             _speed = StartSpeed;
@@ -37,12 +39,18 @@ namespace ProjectPrototype {
         {
             if (collision.tag != "B_transparent")
             {
+                Debug.Log(collision.tag);
                 Destroy(this.gameObject);
                 var rigidbody = collision.GetComponent<Rigidbody2D>();
                 if (rigidbody != null)
                 {
                     var f = transform.TransformDirection(new Vector3(0, mass * _speed, 0));
                     rigidbody.AddForce(new Vector2(f.x, f.y), ForceMode2D.Impulse);
+                }
+                var health = collision.GetComponent<HealthPlayer>();
+                if (health != null)
+                {
+                    health.Health -= damage;
                 }
             }
         }

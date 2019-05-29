@@ -100,6 +100,7 @@ MonoBehaviour:
   mass: 60
   instantiateOnDestroy: {fileID: 3688708145730174098, guid: 52055e4d943c3a144bc05d687c661cc0,
     type: 3}
+  damage: 50
 --- !u!61 &4684243112183221033
 BoxCollider2D:
   m_ObjectHideFlags: 0

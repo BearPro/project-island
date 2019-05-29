@@ -5,18 +5,32 @@ using UnityEngine.UI;
 
 public class HealthPlayer : MonoBehaviour
 {
-    public int health;
+    public int Health { get => health; set => health = value; }
     public Slider slider;
+    [SerializeField]
+    private int health = 100;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        slider.value = health;
+        if(this.tag == "Player" && this.health < 14)
+        {
+            this.Health = 14;
+        }
+        if (slider != null)
+        {
+            slider.value = Health;
+        }
+        if (Health < 0)
+        {
+            if (this.tag != "Player")
+            {
+                Destroy(this.gameObject);
+            }
+        }
     }
 }
