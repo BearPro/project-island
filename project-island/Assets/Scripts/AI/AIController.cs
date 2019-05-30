@@ -41,5 +41,14 @@ namespace ProjectPrototype.AI
 
             }
         }
+        private void OnDestroy()
+        {
+            if (this.weapon != null)
+            {
+                weapon.transform.parent = SceneController.Junk.transform;
+                weapon.GetComponent<Item>().PickedState = PickedState.OnGround;
+            }
+
+        }
     }
 }

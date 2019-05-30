@@ -95,7 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 20
   velocity: -3
-  mass: 1
+  mass: 10
   instantiateOnDestroy: {fileID: 3688708145730174098, guid: 170004df7e3a72e489c0605e5a6d2273,
     type: 3}
   damage: 10
